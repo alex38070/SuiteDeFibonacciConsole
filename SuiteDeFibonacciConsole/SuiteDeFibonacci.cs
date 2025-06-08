@@ -1,17 +1,12 @@
 ﻿namespace SuiteDeFibonacciConsole;
 public class SuiteDeFibonacci
 {
-    public SuiteDeFibonacci()
+    public void lancer(int max)
     {
-
+        RetournerCalcule(0, 0, 1, max);
     }
 
-    public static void lancer()
-    {
-        SuiteDeFibonacci.RetournerCalcule(0, 0, 1);
-    }
-
-    public static void RetournerCalcule(int incrementStop, int nombreUn, int nombreDeux)
+    public void RetournerCalcule(int incrementStop, int nombreUn, int nombreDeux, int max)
     {
         int resultat = nombreUn + nombreDeux;
         Console.WriteLine(resultat);
@@ -19,8 +14,8 @@ public class SuiteDeFibonacci
         nombreUn = nombreDeux;
         nombreDeux = resultat;
         incrementStop++;
-        bool estArret = (incrementStop != 20);
+        bool estArret = (incrementStop != max);
         if (estArret)
-            SuiteDeFibonacci.RetournerCalcule(incrementStop, nombreUn, nombreDeux);
+            RetournerCalcule(incrementStop, nombreUn, nombreDeux, max);
     }
 }

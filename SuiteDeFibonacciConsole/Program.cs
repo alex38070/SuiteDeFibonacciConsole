@@ -4,6 +4,7 @@ public class Program()
 {
     public static void Main(string[] args)
     {
-        SuiteDeFibonacci.lancer();
+        SuiteDeFibonacci suiteDeFibonacci = new();
+        suiteDeFibonacci.lancer(20);
     }
 }
